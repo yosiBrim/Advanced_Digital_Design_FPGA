@@ -1,0 +1,144 @@
+//  Precision RTL Synthesis 64-bit 2021.1.0.4 (Production Release) Tue Jul 20 01:22:31 PDT 2021
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2021, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Windows 10 eladjose@ELEC-403-106  10.0.19041 x64
+//  
+//  Start time Wed Dec 04 13:06:53 2024
+
+-- Device: Xilinx - ARTIX-7 : 7A15TCPG236 : 3
+-- CTE report summary..
+-- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+
+================================================================================================
+                   Clock Frequency Report
+
+	Domain                  Clock Name                            Min Period (Freq)             Required Period (Freq)
+	------                  ----------                            -----------------             ----------------------
+	CLK_PS                  CLK                                   4.931 (202.799 MHz)           10.000 (100.000 MHz)
+	CLK_PS                  VirtualClock                          4.931 (202.799 MHz)           10.000 (100.000 MHz)
+
+
+================================================================================================
+Setup Timing Analysis of VirtualClock
+
+Setup Slack Path Summary
+
+              Data                                     Data  Data        
+       Setup  Path   Source                   Data     End   End   Logic 
+Index  Slack  Delay  Clock   Dest. Clock   Start Pin   Pin   Edge  Levels
+-----  -----  -----  ------  ------------  ----------  ----  ----  ------
+  1    5.069  3.714  CLK     VirtualClock  reg_q(0)/C  TC    Rise       2
+  2    5.084  3.699  CLK     VirtualClock  reg_q(1)/C  TC    Rise       2
+  3    5.108  3.675  CLK     VirtualClock  reg_q(2)/C  TC    Rise       2
+  4    5.121  3.662  CLK     VirtualClock  reg_q(3)/C  TC    Rise       2
+
+Showing 4 paths found in the design.
+                  CTE Path Report
+
+
+Critical path #1, (path slack = 5.069):, Logic Levels = 2
+
+SOURCE CLOCK: name: CLK period: 10.000000
+     Times are relative to the 1st rising edge
+  DEST CLOCK: name: VirtualClock period: 10.000000
+     Times are relative to the 2nd rising edge
+
+NAME                GATE       DELAY    ARRIVAL DIR  FANOUT LEVEL
+reg_q(0)/C       FDRE                   0.000   up
+reg_q(0)/Q       FDRE         0.377     0.377   up
+Q_1_0(0)         (net)        0.393                   6     0  
+ix37142z34082/I3 LUT4                   0.770   up
+ix37142z34082/O  LUT4         0.097     0.867   up
+nx37142z1        (net)        0.333                   1     1  
+TC_obuf/I        OBUF                   1.200   up
+TC_obuf/O        OBUF         2.514     3.714   up
+TC               (net)        0.000                   0     2  
+TC               (port)                 3.714   up
+
+		Initial edge separation:     10.000
+		Source clock delay:      -    1.217
+		Dest clock delay:        +    0.000
+		                        -----------
+		Edge separation:              8.783
+		Setup constraint:        -    0.000
+		                        -----------
+		Data required time:           8.783
+		Data arrival time:       -    3.714   ( 80.45% cell delay, 19.55% net delay )
+		                        -----------
+		Slack:                        5.069
+
+
+
+================================================================================================
+Setup Timing Analysis of CLK
+
+Setup Slack Path Summary
+
+              Data                                                Data        
+       Setup  Path                 Dest.     Data      Data End   End   Logic 
+Index  Slack  Delay  Source Clock  Clock  Start Pin      Pin      Edge  Levels
+-----  -----  -----  ------------  -----  ----------  ----------  ----  ------
+  1    8.760  1.200  CLK           CLK    reg_q(0)/C  reg_q(1)/D  Rise       1
+  2    8.775  1.185  CLK           CLK    reg_q(1)/C  reg_q(2)/D  Rise       1
+  3    8.799  1.161  CLK           CLK    reg_q(2)/C  reg_q(2)/D  Rise       1
+  4    8.812  1.148  CLK           CLK    reg_q(3)/C  reg_q(3)/D  Rise       1
+  5    9.427  1.501  VirtualClock  CLK    RESET       reg_q(3)/R  Rise       1
+
+Showing 5 paths found in the design.
+                  CTE Path Report
+
+
+Critical path #1, (path slack = 8.760):, Logic Levels = 1
+
+SOURCE CLOCK: name: CLK period: 10.000000
+     Times are relative to the 1st rising edge
+  DEST CLOCK: name: CLK period: 10.000000
+     Times are relative to the 2nd rising edge
+
+NAME               GATE      DELAY    ARRIVAL DIR  FANOUT LEVEL
+reg_q(0)/C      FDRE                  0.000   up
+reg_q(0)/Q      FDRE        0.377     0.377   up
+Q_1_0(0)        (net)       0.393                   6     0  
+ix52268z1320/I1 LUT2                  0.770   up
+ix52268z1320/O  LUT2        0.097     0.867   up
+nx52268z1       (net)       0.333                   1     1  
+reg_q(1)/D      FDRE                  1.200   up
+
+		Initial edge separation:     10.000
+		Source clock delay:      -    1.217
+		Dest clock delay:        +    1.217
+		                        -----------
+		Edge separation:             10.000
+		Setup constraint:        -    0.040
+		                        -----------
+		Data required time:           9.960
+		Data arrival time:       -    1.200   ( 39.50% cell delay, 60.50% net delay )
+		                        -----------
+		Slack:                        8.760
+
+
+
+================================================================================================
+                   Input Delay Report
+
+	Input                  Clock Name                            Slack (ns)
+	-----                  ----------                            ----------
+	RESET                  VirtualClock                          ------
+
+
+================================================================================================
+                   Output Delay Report
+
+	Output                 Clock Name                            Slack (ns)
+	------                 ----------                            ----------
+	TC                     VirtualClock                          5.069 
+	Q(0)                   VirtualClock                          5.499 
+	Q(1)                   VirtualClock                          5.514 
+	Q(2)                   VirtualClock                          5.538 
+	Q(3)                   VirtualClock                          5.551 
+

@@ -1,0 +1,81 @@
+//  Precision RTL Synthesis 64-bit 2021.1.0.4 (Production Release) Tue Jul 20 01:22:31 PDT 2021
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2021, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Windows 10 eladjose@ELEC-403-106  10.0.19041 x64
+//  
+//  Start time Wed Dec 04 13:06:53 2024
+
+***************************************************************
+Device Utilization for 7A15TCPG236
+***************************************************************
+Resource                          Used    Avail   Utilization
+---------------------------------------------------------------
+IOs                               7       106       6.60%
+Global Buffers                    1       32        3.13%
+LUTs                              4       10400     0.04%
+CLB Slices                        1       8150      0.01%
+Dffs or Latches                   4       20800     0.02%
+Block RAMs                        0       25        0.00%
+DSP48E1s                          0       45        0.00%
+---------------------------------------------------------------
+
+*********************************************
+
+Library: work    Cell: CNTR    View: CNTR_ARC
+
+*********************************************
+
+  Cell         Library  References     Total Area
+
+ BUFGP         xca7     1 x
+ FDRE          xca7     4 x      1      4 Dffs or Latches
+ IBUF          xca7     1 x
+ INV           xca7     1 x      1      1 LUTs
+ LUT2          xca7     1 x      1      1 LUTs
+ LUT3          xca7     1 x      1      1 LUTs
+ LUT4          xca7     2 x      1      2 LUTs
+ OBUF          xca7     5 x
+ VCC           xca7     1 x
+
+ Number of ports :                            7
+ Number of nets :                            19
+ Number of instances :                       17
+ Number of references to this view :          0
+
+Total accumulated area : 
+ Number of Dffs or Latches :                  4
+ Number of LUTs :                             4
+ Number of Primitive LUTs :                   5
+ Number of LUTs with LUTNM/HLUTNM :           2
+ Number of accumulated instances :           17
+
+
+*****************************
+ IO Register Mapping Report
+*****************************
+Design: work.CNTR.CNTR_ARC
+
++----------+-----------+----------+----------+----------+
+| Port     | Direction |   INFF   |  OUTFF   |  TRIFF   |
++----------+-----------+----------+----------+----------+
+| CLK      | Input     |          |          |          |
++----------+-----------+----------+----------+----------+
+| RESET    | Input     |          |          |          |
++----------+-----------+----------+----------+----------+
+| Q(3)     | Output    |          |          |          |
++----------+-----------+----------+----------+----------+
+| Q(2)     | Output    |          |          |          |
++----------+-----------+----------+----------+----------+
+| Q(1)     | Output    |          |          |          |
++----------+-----------+----------+----------+----------+
+| Q(0)     | Output    |          |          |          |
++----------+-----------+----------+----------+----------+
+| TC       | Output    |          |          |          |
++----------+-----------+----------+----------+----------+
+Total registers mapped: 0
+
