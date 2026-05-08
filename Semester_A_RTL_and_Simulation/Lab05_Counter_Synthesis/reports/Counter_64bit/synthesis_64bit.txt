@@ -1,0 +1,23 @@
+synthesize
+# Info: [668]: Current working directory: <...>/lab.15/lab_15_64bit_impl_1.
+# Warning: [19539]: No debug point is implemented, continuing with the normal synthesis run.
+# Info: [20013]: Precision will use 2 processor(s).
+# Info: [15002]: Optimizing design <...>.CNTR64.CNTR64_ARC
+# Info: [15002]: Optimizing design <...>.CNTR64.CNTR64_ARC
+# Info: [8010]: Gated clock transformations: Begin...
+# Info: [8010]: Gated clock transformations: End...
+# Info: [8053]: Added global buffer BUFGP for Port port:CLK
+# Info: [1081]: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+# Info: Constraints: Precision Generated Clock Domains:
+# Info: Domain Name: CLK_PS             Clock Name: CLK Clock Name: VirtualClock
+# Info: [3027]: Writing file: <...>/lab_15_64bit_impl_1/CNTR64.edf.
+# Info: [3027]: Writing file: <...>/lab_15_64bit_impl_1/CNTR64.xdc.
+# Info: -- Writing file Z:/VHTL1/lab.15/lab_15_64bit_impl_1/CNTR64.tcl
+# Info: [3027]: Writing file: <...>/lab_15_64bit_impl_1/CNTR64.v.
+# Info: -- Writing file Z:/VHTL1/lab.15/lab_15_64bit_impl_1/CNTR64.tcl
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12048]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [671]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 1.3 s secs.
+# Info: [11020]: Overall running time for synthesis: 3.4 s secs.
