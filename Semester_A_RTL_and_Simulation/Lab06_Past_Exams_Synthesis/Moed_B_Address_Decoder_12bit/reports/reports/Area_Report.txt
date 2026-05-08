@@ -1,0 +1,7 @@
+***************************************************************
+Device Utilization for Xilinx Artix-7 (Moed B - Decoder)
+***************************************************************
+Resource utilization for 12-bit Range Decoder:
+- Number of LUTs: (Check the value in your word file under Area Report)
+- Number of I/O: 13 (12 Address + 1 Enable)
+***************************************************************
