@@ -1,0 +1,14 @@
+***************************************************************
+Device Utilization for 7A15TCPG236 [cite: 57]
+***************************************************************
+Resource                          Used    Avail   Utilization [cite: 59]
+---------------------------------------------------------------
+IOs                               11      106      10.38% [cite: 61]
+LUTs                              5       10400     0.05% [cite: 63]
+CLB Slices                        2       8150      0.02% [cite: 64]
+Dffs or Latches                   0       20800     0.00% [cite: 65]
+---------------------------------------------------------------
+Number of ports :                           11 [cite: 79]
+Number of nets :                            24 [cite: 80]
+Number of instances :                       16 [cite: 81]
+Number of LUTs :                             5 [cite: 84]
