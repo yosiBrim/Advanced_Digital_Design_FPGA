@@ -1,0 +1,13 @@
+================================================================================================
+Clock Frequency Report [cite: 134]
+Domain                  Clock Name                            Min Period (Freq)             Required Period (Freq) [cite: 135]
+------                  ----------                            -----------------             ----------------------
+VirtualClock_PS         VirtualClock                          4.749 (210.571 MHz)           10.000 (100.000 MHz) [cite: 137]
+================================================================================================
+
+Setup Slack Path Summary [cite: 140]
+Critical path #1, (path slack = 5.251): [cite: 156]
+Data required time:          10.000 [cite: 184]
+Data arrival time:       -    4.749   ( 81.17% cell delay, 18.83% net delay ) [cite: 185]
+-----------
+Slack:                        5.251 [cite: 187]
