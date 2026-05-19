@@ -1,6 +1,6 @@
 # RTL Design: Programmable Time Base
 
-## 📄 File: `cntr_prog.vhd`
+## 📄 File: `cntr.vhd`
 This directory contains the VHDL source code for a 16-bit programmable frequency divider.
 
 ### 🛠️ Architectural Details
