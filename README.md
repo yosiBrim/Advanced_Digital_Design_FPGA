@@ -24,36 +24,3 @@ Focused on mastering VHDL syntax, building fundamental digital IP blocks, and de
 ### [Phase 2: Semester B - Physical Implementation & Timing Closure](./Semester_B_Physical_Implementation)
 Transitioned the RTL IPs into physical hardware. This phase covers handling physical FPGA constraints (XDC), dealing with propagation delays, Post-PnR simulations, and final Bitstream generation. The culmination of this phase is a fully functional, physically deployed **Traffic Light Controller**.
 
-graph TD
-    %% הגדרת הבלוקים הראשיים
-    subgraph Top_Level_Entity [Top_Level VHDL Structure]
-        direction TB
-
-        %% פיני כניסה/יציאה
-        CLK_IN[100MHz CLK In]
-        RST_IN[Async RESET In]
-        LEDS_OUT[LIGHT 4:0 LED Output]
-
-        %% מודולים פנימיים
-        TB[Time_Base.vhd]
-        CNT[Counters.vhd]
-        FSM[State_machine.vhd]
-
-        %% חיווט (זרימת נתונים)
-        CLK_IN --> TB
-        CLK_IN --> FSM
-        CLK_IN --> CNT
-        RST_IN --> TB
-        RST_IN --> FSM
-
-        TB -- TC_TimeBase --> CNT
-        CNT -- ADV_Signal --> FSM
-        FSM -- SEL_Interval --> CNT
-        
-        %% חיבור לפלט
-        FSM --> LEDS_OUT
-    end
-
- חיבור לפלט
-        FSM ==> LEDS_OUT
-    end
