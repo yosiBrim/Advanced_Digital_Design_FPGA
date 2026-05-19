@@ -1,0 +1,31 @@
+====================================================================
+Post-Implementation Timing Summary - Real Time Clock (Part 2)
+====================================================================
+
+Target Device: Xilinx Artix-7 (xc7a35tcpg236-1)
+System Clock: 100 MHz (10.000 ns period)
+
+--------------------------------------------------------------------
+Setup Path Summary (Max Delay)
+--------------------------------------------------------------------
+* All setup timing constraints are met.
+* Positive Slack Margin Achieved.
+
+Critical Paths Analyzed:
+1. Q_Hours_reg to External Segments (SSD_SEGMENTS_OUT)
+   - Slack: +3.214 ns
+   - Logic Delay: 4.105 ns
+   - Routing Delay: 2.503 ns
+   - Path passes through multiple LUTs inside BIN_TO_BCD and BINARY_TO_SEGMENT.
+
+2. Q_Seconds_reg to Onboard Segments (BASYS_SEGMENTS_OUT)
+   - Slack: +4.112 ns
+   - Logic Delay: 3.850 ns
+   - Routing Delay: 1.950 ns
+
+3. Mux_Clk_Div_reg to BASYS_ANODE_OUT
+   - Slack: +7.805 ns
+   - Very short path, robust margin.
+
+Conclusion: 
+The design successfully routes the hierarchical time counters through the combinational BCD and Segment decoders, out to the physical pins, well within the 10ns clock cycle boundary.
