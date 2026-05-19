@@ -24,38 +24,36 @@ Focused on mastering VHDL syntax, building fundamental digital IP blocks, and de
 ### [Phase 2: Semester B - Physical Implementation & Timing Closure](./Semester_B_Physical_Implementation)
 Transitioned the RTL IPs into physical hardware. This phase covers handling physical FPGA constraints (XDC), dealing with propagation delays, Post-PnR simulations, and final Bitstream generation. The culmination of this phase is a fully functional, physically deployed **Traffic Light Controller**.
 
-```mermaid
 graph TD
-    %% הגדרת סגנונות חזותיים
-    classDef top_level fill:#f9f,stroke:#333,stroke-width:2s;
-    classDef internal fill:#e1f5fe,stroke:#0277bd,stroke-width:1px;
-    classDef ports fill:#fff,stroke:#333,stroke-dasharray: 5 5;
-
-    %% ישות ה-Top Level (המכלול)
-    subgraph Top_Level_Entity [Top_Level.vhd - Structural Wrapper]
+    %% הגדרת הבלוקים הראשיים
+    subgraph Top_Level_Entity [Top_Level VHDL Structure]
         direction TB
 
-        %% פינים חיצוניים (Inputs/Outputs)
-        CLK_IN(100MHz CLK In):::ports
-        RST_IN(Async RESET In):::ports
-        LEDS_OUT(LIGHT[4:0] LED Output):::ports
+        %% פיני כניסה/יציאה
+        CLK_IN[100MHz CLK In]
+        RST_IN[Async RESET In]
+        LEDS_OUT[LIGHT 4:0 LED Output]
 
-        %% רכיבים פנימיים
-        TB[Time_Base.vhd<br/>(Frequency Divider)]:::internal
-        CNT[Counters.vhd<br/>(Interval Manager)]:::internal
-        FSM[State_machine.vhd<br/>(Moore FSM Logic)]:::internal
+        %% מודולים פנימיים
+        TB[Time_Base.vhd]
+        CNT[Counters.vhd]
+        FSM[State_machine.vhd]
 
-        %% חיווט פנימי וזרימת נתונים
-        CLK_IN ==> TB
-        CLK_IN ==> FSM
-        CLK_IN ==> CNT
-        RST_IN ==> TB
-        RST_IN ==> FSM
+        %% חיווט (זרימת נתונים)
+        CLK_IN --> TB
+        CLK_IN --> FSM
+        CLK_IN --> CNT
+        RST_IN --> TB
+        RST_IN --> FSM
 
-        TB -- "TC_TimeBase (1s Pulse)" --> CNT
-        CNT -- "ADV (Advance Signal)" --> FSM
-        FSM -- "SEL (Interval Select)" --> CNT
+        TB -- TC_TimeBase --> CNT
+        CNT -- ADV_Signal --> FSM
+        FSM -- SEL_Interval --> CNT
         
         %% חיבור לפלט
+        FSM --> LEDS_OUT
+    end
+
+ חיבור לפלט
         FSM ==> LEDS_OUT
     end
